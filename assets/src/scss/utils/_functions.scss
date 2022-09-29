@@ -1,0 +1,13 @@
+@use "sass:math";
+@use "sass:map";
+
+@function rem-calc($size)
+{
+  $remSize: math.div($size, $base_Font_Size);
+  @return #{$remSize}rem;
+}
+
+@function map-get($nameList, $nameItem)
+{
+  @return map.get($nameList, "#{$nameItem}");
+}

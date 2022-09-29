@@ -1,0 +1,17 @@
+.close-btn {
+
+  @include btn();
+
+  padding: 10px;
+
+  &:hover .svg-icon {
+
+    @include transition();
+    fill: #737373;
+  }
+
+  .svg-icon {
+    position: relative;
+    z-index: -1;
+  }
+}

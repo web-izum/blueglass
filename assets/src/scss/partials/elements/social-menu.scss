@@ -1,0 +1,26 @@
+.social-menu {
+
+  @include listStyleNone();
+
+  display: flex;
+
+  .menu-item {
+
+    &>a {
+
+      @include btn();
+
+      padding: rem-calc(8);
+
+      .svg-icon {
+
+        fill: $white;
+      }
+
+      &:hover .svg-icon {
+
+        fill: $grey;
+      }
+    }
+  }
+}

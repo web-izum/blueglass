@@ -1,0 +1,177 @@
+@import "../utils/utils";
+
+.acf-block-proposal {
+
+  padding-top: rem-calc(45);
+  padding-bottom: rem-calc(10);
+
+  @include bp(lg) {
+
+    padding-bottom: rem-calc(45);
+  }
+
+  &__row {
+
+    @include bp(md) {
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+
+    &:first-child {
+
+      @include bp(md) {
+
+        flex-basis: 50%;
+        max-width: calc(rem-calc(480) + 1.14%);
+        order: 2;
+
+        padding-left: 1.14%;
+      }
+
+      @include bp(lg) {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    &:last-child {
+
+      @include bp(md) {
+
+        flex-basis: 50%;
+        order: 1;
+        padding-right: 1.14%;
+      }
+    }
+  }
+
+  &__header {
+
+    margin-bottom: rem-calc(30);
+
+    @include bp(lg) {
+      margin-bottom: rem-calc(45);
+    }
+  }
+
+  &__subtitle,
+  &__title {
+
+    font-family: $base_Font_Family;
+  }
+
+  &__subtitle {
+
+    display: block;
+
+    margin-bottom: rem-calc(9);
+
+    font-weight: 500;
+    font-size: rem-calc(12);
+    line-height: 1.36;
+
+    color: $grey;
+
+    @include bp(xl) {
+
+      font-size: rem-calc(16);
+    }
+  }
+
+  &__title {
+
+    margin-bottom: 0;
+
+    font-weight: 600;
+    font-size: rem-calc(36);
+    line-height: 1.06;
+
+    color: $black;
+
+    @include bp(xl) {
+
+      font-size: rem-calc(50);
+    }
+  }
+
+  &__information {
+    &-list {
+
+      @include listStyleNone();
+
+      display: flex;
+      flex-wrap: wrap;
+
+
+      margin-right: rem-calc(-7.5);
+      margin-bottom: rem-calc(40);
+      margin-left: rem-calc(-7.5);
+    }
+
+    &-item {
+
+      flex-basis: calc(50% - rem-calc(15));
+      margin-right: rem-calc(7.5);
+      margin-bottom: rem-calc(35);
+      margin-left: rem-calc(7.5);
+
+      @include bp(xl) {
+
+        max-width: 200px;
+        margin-bottom: rem-calc(40);
+      }
+
+      &:last-child,
+      &_penultimate-child {
+
+        margin-bottom: 0;
+
+        @include bp(xl) {
+
+          margin-bottom: 0;
+        }
+      }
+
+      &-top {
+        display: block;
+        font-family: $base_Font_Family;
+        color: $black;
+      }
+
+      &-top {
+
+        font-weight: 400;
+        font-size: rem-calc(30);
+        line-height: 1.06;
+
+        @include bp(xl) {
+
+          font-size: rem-calc(45);
+        }
+      }
+
+      &-bottom {
+
+        font-weight: 500;
+        font-size: rem-calc(14);
+        line-height: 1.36;
+      }
+    }
+  }
+
+  &__img {
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+}

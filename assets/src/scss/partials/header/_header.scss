@@ -1,0 +1,201 @@
+.site-header {
+
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  @include bp(lg){
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  &__wrapper {
+
+    display: flex;
+    align-items: center
+  }
+
+  &__hamburger {
+
+      @include btn();
+
+      padding: 10px;
+      margin-left: auto;
+      margin-right: -10px;
+
+    @include bp(lg) {
+
+      display: none;
+    }
+
+    .svg-icon {
+
+      stroke: #292D32;
+    }
+
+      &:hover .svg-icon {
+
+        @include transition();
+        stroke: $black;
+      }
+
+      .svg-icon {
+        position: relative;
+        z-index: -1;
+      }
+
+  }
+}
+
+.mobile-navigation {
+
+  @include transition(right, 0.5s);
+
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  position: fixed;
+  top: 0;
+  right: -82vw;
+  z-index: 10;
+
+  width: 82vw;
+  height: 100vh;
+
+  padding: 47px 20px 10px 20px;
+
+  background-color: rgba(255, 255, 255, 1);
+
+  @include bp(lg) {
+
+    display: none;
+  }
+
+  &.open {
+
+    @include transition(right, 0.5s);
+
+    right: 0;
+  }
+
+  &__close-menu {
+
+    position: absolute;
+    top: -2px;
+    right: 10px;
+  }
+
+  &__wrapper {
+
+    @include listStyleNone();
+
+    margin-bottom: rem-calc(30);
+  }
+
+  &__nav-widget {
+
+    display: block;
+
+    text-align: center;
+  }
+
+  & .menu-item {
+
+    &>a {
+
+      padding-top: rem-calc(20);
+      padding-bottom: rem-calc(20);
+    }
+  }
+}
+
+.primary-navigation {
+
+  display: none;
+
+  margin-left: rem-calc(95);
+  margin-right: rem-calc(20);
+
+  @include bp(lg) {
+
+    display: block;
+  }
+
+  &__wrapper {
+    @include listStyleNone();
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__nav-widget {
+
+    display: none;
+
+    @include bp(lg) {
+
+      display: block;
+
+      margin-left: auto;
+    }
+  }
+
+  & .menu-item {
+
+    margin-right: rem-calc(25);
+
+    &>a {
+
+      &:hover {
+
+        @include transition();
+
+        color: $black;
+      }
+    }
+
+    &:last-child {
+
+      margin-right: 0;
+    }
+  }
+
+}
+
+.primary-navigation,
+.mobile-navigation {
+
+  & .menu-item {
+
+    &>a {
+
+      @include transition();
+
+      display: block;
+
+      font-family: $base_Font_Family;
+      font-weight: 600;
+      font-size: rem-calc(16);
+      line-height: 1;
+      text-decoration: none;
+      text-align: center;
+
+      color: $grey;
+    }
+
+    &.current-menu-item {
+
+      &>a {
+
+        color: $black;
+      }
+    }
+  }
+
+  &.current-menu-item {
+
+    &>a {
+
+      color: $black;
+    }
+  }
+}

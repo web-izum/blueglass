@@ -1,0 +1,120 @@
+// Media Queries
+// http://css-tricks.com/conditional-media-query-mixins/
+
+$MQs: true;
+@mixin bp($point) {
+    @if ($MQs) {
+        @each $name, $size in $screen-Sizes
+        {
+            @if $point == $name {
+                @media (min-width: #{$size}) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+// Container
+
+@mixin container($max-with: 100%, $gutter: $container-Padding-X) {
+    width: 100%;
+    max-width: $max-with;
+    padding-right: $gutter;
+    padding-left: $gutter;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Components
+
+@mixin paragraph($color: inherit, $size: rem-calc(13), $weight: 400,  $family: inherit, $style: normal) {
+
+    margin: 0 0 1rem;
+
+    font:{
+        family: $family;
+        style: $style;
+        weight: $weight;
+        size: $size;
+    }
+    line-height: 1.3;
+    color: $color;
+}
+
+@mixin btn() {
+
+    display: inline-flex;
+
+    padding: 0;
+    margin: 0;
+
+    background-color: transparent;
+
+    border: 0.5px solid transparent;
+
+    cursor: pointer;
+
+    @include transition();
+
+    outline: none;
+
+    &:focus {
+
+        border-color: transparent;
+
+        @include bp(lg) {
+            border-color: $purple;
+        }
+    }
+
+    &:focus-visible {
+
+        border-color: transparent;
+
+        @include bp(lg) {
+            border-color: $purple;
+        }
+    }
+
+    &:hover {
+
+        @include transition();
+    }
+}
+
+@mixin filLBtn($color: $white, $bg: $black) {
+
+    @include btn();
+
+    justify-content: center;
+    align-items: center;
+
+    padding: rem-calc(9) rem-calc(32) rem-calc(8);
+
+
+    font-family: $base_Font_Family;
+    font-weight: 500;
+    font-size: rem-calc(16);
+    line-height: 1;
+
+    color:$color;
+
+    background-color: $bg;
+    border-radius: 50px;
+
+    &:hover {
+
+        color: $grey;
+    }
+}
+
+@mixin listStyleNone() {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin transition($property: all, $duration: 0.1s, $temporary: ease-in-out) {
+    transition: $property $duration $temporary;
+}

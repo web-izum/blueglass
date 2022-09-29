@@ -1,0 +1,12 @@
+.nav-widget {
+
+  &__btn {
+
+    @include filLBtn();
+  }
+
+  &.black &__btn {
+
+    @include filLBtn($black, $white);
+  }
+}

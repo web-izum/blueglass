@@ -1,0 +1,46 @@
+.site-logo {
+
+  @include bp(sm) {
+
+    width: 108px;
+    height: 42px;
+  }
+
+  &__img {
+
+    width: 75px;
+    height: 28px;
+
+    @include bp(sm) {
+
+      width: 108px;
+      height: 42px;
+    }
+  }
+}
+
+.site-name {
+
+  &__text {
+
+    @include transition();
+
+    display: block;
+
+    font-family: $base_Font_Family;
+    font-weight: 600;
+    font-size: rem-calc(16);
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+
+    color: $grey;
+
+    &:hover {
+
+      @include transition();
+
+      color: $black;
+    }
+  }
+}
